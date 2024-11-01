@@ -4,6 +4,7 @@ import { MouseEvent, useState } from "react";
 interface Props {
   itemsets: string[];
   heading: string;
+  onSelectItem: (item: string) => void;
 }
 function ListGroup(props: Props) {
   //State hook
@@ -40,6 +41,7 @@ function ListGroup(props: Props) {
             key={item}
             onClick={() => {
               setSelectedIndex(index);
+              props.onSelectItem(item);
             }}
           >
             {" "}
