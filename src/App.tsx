@@ -27,6 +27,7 @@ function App() {
   );
   */
     <div>
+      <Alert>My alert</Alert>
       <Button color="danger" onClick={() => console.log("click")}>
         Click
       </Button>
