@@ -1,4 +1,5 @@
 import Message from "./Message";
+import Alert from "./components/Alert";
 import ListGroup from "./components/ListGroup";
 
 function App() {
@@ -7,6 +8,7 @@ function App() {
     console.log(item);
   };
   return (
+    /*
     <div>
       {" "}
       <ListGroup
@@ -14,6 +16,10 @@ function App() {
         heading="Cities"
         onSelectItem={handleSelectItem}
       />{" "}
+    </div>
+    */
+    <div>
+      <Alert>Hello World</Alert>
     </div>
   );
 }
