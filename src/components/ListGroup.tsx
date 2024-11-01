@@ -1,8 +1,8 @@
 import { Fragment } from "react/jsx-runtime";
+import { MouseEvent } from "react";
 
 function ListGroup() {
-  let items = ["Berlin", "Dresden", "Würzburg"];
-  items = [];
+  const items = ["Berlin", "Dresden", "Würzburg", "Passau"];
 
   const getMessage = () => {
     return items.length === 0 ? <p> No items found </p> : null;
@@ -18,13 +18,19 @@ function ListGroup() {
     );
   */
 
+  const handleClick = (event: MouseEvent) => console.log(event);
+
+  //{items.length === 0 ? <p> No items found </p> : null} = getMessage()
   return (
     <Fragment>
       <h1> List </h1>
-      {items.length === 0 ? <p> No items found </p> : null} //getMessage()
+      {items.length === 0 ? <p> No items found </p> : null}
       <ul className="list-group">
-        {items.map((item) => (
-          <li key={item}> {item} </li>
+        {items.map((item, index) => (
+          <li className="list-group-item" key={item} onClick={handleClick}>
+            {" "}
+            {item}{" "}
+          </li>
         ))}
       </ul>
     </Fragment>
