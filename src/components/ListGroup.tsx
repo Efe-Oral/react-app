@@ -1,13 +1,15 @@
 import { Fragment } from "react/jsx-runtime";
 import { MouseEvent, useState } from "react";
 
-function ListGroup() {
-  const items = ["Berlin", "Dresden", "Würzburg", "Passau"];
+interface Props {
+  itemsets: string[];
+  heading: string;
+}
+function ListGroup(props: Props) {
   //State hook
   const [selectedIndex, setSelectedIndex] = useState(-1);
-
   const getMessage = () => {
-    return items.length === 0 ? <p> No items found </p> : null;
+    return props.itemsets.length === 0 ? <p> No items found </p> : null;
   };
   /* Alternative way of cheking "No items found"
   if (items.length === 0)
@@ -25,10 +27,10 @@ function ListGroup() {
   //{items.length === 0 ? <p> No items found </p> : null} = getMessage()
   return (
     <Fragment>
-      <h1> List </h1>
-      {items.length === 0 ? <p> No items found </p> : null}
+      <h1> {props.heading} </h1>
+      {props.itemsets.length === 0 ? <p> No items found </p> : null}
       <ul className="list-group">
-        {items.map((item, index) => (
+        {props.itemsets.map((item, index) => (
           <li
             className={
               selectedIndex === index
