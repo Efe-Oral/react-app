@@ -1,6 +1,7 @@
 import Message from "./Message";
 import Alert from "./components/Alert";
 import ListGroup from "./components/ListGroup";
+import Button from "./components/Button";
 
 function App() {
   const items = ["Berlin", "Dresden", "Würzburg", "Passau"];
@@ -18,8 +19,17 @@ function App() {
       />{" "}
     </div>
     */
+
+    /*
     <div>
       <Alert>Hello World</Alert>
+    </div>
+  );
+  */
+    <div>
+      <Button color="danger" onClick={() => console.log("click")}>
+        Click
+      </Button>
     </div>
   );
 }
